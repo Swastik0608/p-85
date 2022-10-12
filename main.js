@@ -1,12 +1,14 @@
 canvas=document.getElementById("myCanvas");
 ctx= canvas.getContext("2d");
-greencar_width= 100;
-greencar_height= 160;
+
+greencar_width= 75;
+greencar_height= 100;
+
 background_image = "parkingLot.jpg";
 background_imgTag_height=440;
 background_imgTag_width=900;
 greencar_image = "car2.png";
-greencar_X=100;
+greencar_X=75;
 greencar_Y=100;
 function add() {
 	//upload car, and background images on the canvas.
@@ -14,7 +16,7 @@ function add() {
 	background_imgTag.onload=uploadBackground;
 	background_imgTag.src=background_image;
 
-	greencar_imgTag
+	greencar_imgTag=new Image();
 	greencar_imgTag.onload=uploadgreencar;
 	greencar_imgTag.src=greencar_image;
 }
@@ -67,8 +69,8 @@ function up()
 	//Define function to move the car upward
 	if(greencar_Y >=0){
 		greencar_Y=greencar_Y-10;
-		uploadBackground;
-		uploadgreencar;
+		uploadBackground();
+		uploadgreencar();
 	}
 }
 
@@ -76,9 +78,9 @@ function down()
 {
 	//Define function to move the car downward
 	if(greencar_Y <=440){
-    greencar_Y=greencar_y+10;
-	uploadBackground;
-	uploadgreencar;
+    greencar_Y=greencar_Y+10;
+	uploadBackground();
+	uploadgreencar();
 	}
 }
 
@@ -87,8 +89,8 @@ function left()
 	//Define function to move the car left side
 	if(greencar_X >=0){
     greencar_X=greencar_X-10;
-	uploadBackground;
-	uploadgreencar;
+	uploadBackground();
+	uploadgreencar();
 	}
 }
 
@@ -97,7 +99,7 @@ function right()
 	//Define function to move the car right side
 	if(greencar_X <=900){
 	greencar_X=greencar_X+10;
-	uploadBackground;
-	uploadgreencar;
+	uploadBackground();
+	uploadgreencar();
 	}
 }
